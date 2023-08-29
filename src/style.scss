@@ -14,6 +14,7 @@ body {
   > #title {
     font-size: 3rem;
     height: 30%;
+    margin-top: 50px;
   }
 
   > #leaderboard-content {
@@ -21,6 +22,44 @@ body {
     height: 70%;
     width: 100%;
     justify-content: center;
+    gap: 50px;
+
+    > * {
+      padding: 50px;
+      width: 30%;
+    }
+
+    #all-scores-container {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      gap: 15px;
+
+      #all-scores-list {
+        border: 1px solid black;
+
+        .score-item {
+          height: 40px;
+          display: flex;
+          align-items: center;
+          padding: 5px 10px;
+          background-color: rgb(239, 239, 239);
+        }
+        
+        :nth-child(even) {
+          background-color: lightgray;
+        }
+      }
+    }
+
+    #all-scores-header {
+      display: flex;
+
+      button {
+        margin-left: auto;
+        padding: 5px;
+      }
+    }
 
     h3 {
       font-size: 2rem;
@@ -29,6 +68,13 @@ body {
     #score-submit-form {
       display: flex;
       flex-direction: column;
+      padding: 15px 0;
+      gap: 15px;
+
+      button {
+        margin-left: auto;
+        padding: 5px;
+      }
     }
   }
 }
