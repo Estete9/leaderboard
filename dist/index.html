@@ -3,10 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <title>Leaderboard - share your score</title>
   <script defer src="index.js"></script></head>
+  <header></header>
   <body>
-    <h1>Hello webpack!</h1>
-    <h2>this is test again right now?</h2>
+    <section id="title">
+      <h1>Leaderboard</h1>
+    </section>
+    <article id="leaderboard-content">
+      <section id="all-scores-section">
+        <div id="all-scores-container">
+          <div id="all-scores-header">
+            <h3>Recent scores</h3>
+            <button id="refresh-btn">Refresh</button>
+          </div>
+          <ul id="all-scores-list">
+            <!-- this is dynamically populated -->
+          </ul>
+        </div>
+      </section>
+      <section id="score-input-section">
+        <h3>Add your score</h3>
+        <form id="score-submit-form" action="https://formspree.io/f/xzblbkpe" method="post">
+          <input type="text" placeholder="Your name" required />
+          <input type="text" placeholder="Your score" required />
+          <button id="submit-btn" type="submit">Submit</button>
+        </form>
+      </section>
+    </article>
   </body>
+  <footer></footer>
 </html>
