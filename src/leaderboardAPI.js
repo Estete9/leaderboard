@@ -36,8 +36,6 @@ class LeaderboardAPI {
         throw new Error('Failed to create a post.');
       }
       const leaderboardResponse = await response.json();
-      console.log('this is the response', leaderboardResponse.result);
-      console.log('this is the response type', typeof leaderboardResponse.result);
       return leaderboardResponse.result;
     } catch (error) {
       console.error('Error retrieving the leaderboard:', error.message);

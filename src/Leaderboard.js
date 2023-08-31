@@ -12,7 +12,6 @@ class Leaderboard {
     }
 
     // if list is empty, add a score-item placeholder
-    console.log(`scoresList length ${this.scoresList.length}`);
     if (!this.scoresList.length) {
       const scoresListContainer = document.getElementById('all-scores-list');
       scoresListContainer.innerHTML = '';
