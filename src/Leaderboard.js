@@ -1,9 +1,16 @@
 class Leaderboard {
-  constructor(scoresList) {
-    this.scoresList = scoresList;
+  constructor(api) {
+    this.leaderboardApi = api;
+    this.scoresList = [];
   }
 
-  updateLeaderboard = () => {
+  updateLeaderboard = async () => {
+    try {
+      this.scoresList = await this.leaderboardApi.getLeaderboard();
+    } catch (error) {
+      console.error('Error creating a post:', error.message);
+    }
+
     // if list is empty, add a score-item placeholder
     console.log(`scoresList length ${this.scoresList.length}`);
     if (!this.scoresList.length) {
@@ -30,7 +37,7 @@ class Leaderboard {
       scoreItem.id = index;
       // prettier-ignore
       scoreItem.innerHTML = `
-        <li class="score-item">${score.name}: ${score.score}</li>
+        <li class="score-item">${score.user}: ${score.score}</li>
     `;
 
       scoresListContainer.appendChild(scoreItem);
@@ -39,3 +46,4 @@ class Leaderboard {
 }
 
 export default Leaderboard;
+

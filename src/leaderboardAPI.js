@@ -19,7 +19,7 @@ class LeaderboardAPI {
         },
       });
 
-      if (!response.ok) {
+      if (!response.status) {
         throw new Error('Failed to create a post.');
       }
     } catch (error) {
@@ -29,20 +29,44 @@ class LeaderboardAPI {
 
   getLeaderboard = async () => {
     console.log('retrieving leaderboard...');
-    let scoreList;
     try {
       const response = await fetch(`${baseURL}/games/${this.leaderboardGameID}/scores/`);
 
-      if (!response.ok) {
+      if (!response.status) {
         throw new Error('Failed to create a post.');
       }
-      scoreList = await response.json();
-      console.log('this is the response', scoreList);
+      const leaderboardResponse = await response.json();
+      console.log('this is the response', leaderboardResponse.result);
+      console.log('this is the response type', typeof leaderboardResponse.result);
+      return leaderboardResponse.result;
+    } catch (error) {
+      console.error('Error retrieving the leaderboard:', error.message);
+    }
+    return [];
+  };
+
+  postScore = async (user, score) => {
+    console.log('posting score...');
+    try {
+      const response = await fetch(`${baseURL}/games/${this.leaderboardGameID}/scores/`, {
+        method: 'POST',
+        body: JSON.stringify({
+          user,
+          score,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      });
+
+      if (!response.status) {
+        throw new Error('Failed to create a post.');
+      }
     } catch (error) {
       console.error('Error creating a post:', error.message);
     }
-    return scoreList;
   };
 }
 
 export default LeaderboardAPI;
+
