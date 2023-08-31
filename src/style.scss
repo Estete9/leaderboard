@@ -1,20 +1,32 @@
+$primary-font: 'Arial', sans-serif;
+$secondary-font: 'Helvetica Neue', sans-serif;
+$primary-color: #3498db;
+$secondary-item-color: #e4e4e4;
+$background-color: #f5f5f5;
+
 * {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: $primary-font;
+  box-sizing: border-box;
 }
 
 body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 10px);
   align-items: center;
+  background-color: $background-color;
+  color: #333;
+  padding: 5px;
 
-  > #title {
+  #title {
     font-size: 3rem;
     height: 30%;
-    margin-top: 50px;
+    margin: 50px;
+    color: $primary-color;
   }
 
   > #leaderboard-content {
@@ -25,29 +37,39 @@ body {
     gap: 50px;
 
     > * {
-      padding: 50px;
-      width: 30%;
+      width: 50%;
+      max-width: 500px;
+      padding: 30px;
     }
 
     #all-scores-container {
+      background-color: $secondary-item-color;
+      border-radius: 6px;
       display: flex;
       flex-direction: column;
       padding: 15px;
       gap: 15px;
+      border: 2px solid $primary-color;
 
       #all-scores-list {
-        border: 1px solid black;
+        border: 1px solid $primary-color;
+        border-radius: 6px;
+        background-color: $background-color;
 
         .score-item {
-          height: 30px;
           display: flex;
           align-items: center;
-          padding: 5px 10px;
-          background-color: rgb(239, 239, 239);
-        }
+          padding: 10px;
+          border-radius: 6px;
+          transition: background-color 0.3s;
 
-        :nth-child(even) {
-          background-color: lightgray;
+          &:nth-child(even) {
+            background-color: $secondary-item-color;
+          }
+
+          &:hover {
+            background-color: lighten($primary-color, 10%);
+          }
         }
       }
     }
@@ -55,14 +77,74 @@ body {
     #all-scores-header {
       display: flex;
 
-      button {
+      #refresh-btn {
+        padding: 8px;
+        width: 36px;
+        height: 40px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
         margin-left: auto;
-        padding: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s, transform 0.5s, width 0.5s;
+
+        > span {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+
+        #refresh-icon {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: opacity 0.5s;
+        }
+
+        &:hover {
+          background-color: lighten($primary-color, 10%);
+          transform: scale(1.05);
+          width: 66px;
+
+          #refresh-icon {
+            opacity: 0;
+          }
+
+          > span {
+            opacity: 1;
+          }
+        }
+        // > span,
+        // #refresh-icon {
+        //   #refresh-icon {
+        //     position: absolute;
+        //     top: 50%;
+        //     opacity: 0;
+        //     left: 50%;
+        //   }
+        //   transform: translate(-50%, -50%);
+        //   transition: all 0.5s;
+        // }
+
+        // #refresh-icon {
+        //   > span {
+        //     width: 20px;
+        //     opacity: 1;
+        //     height: 20px;
+        //   }
+        // }
       }
     }
 
     h3 {
       font-size: 2rem;
+      font-family: $secondary-font;
+      color: $primary-color;
+      margin-top: 0;
     }
 
     #score-submit-form {
@@ -72,12 +154,32 @@ body {
       gap: 15px;
 
       input {
-        height: 30px;
+        height: 40px;
+        padding: 8px;
+        border: 1px solid $primary-color;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
       }
 
-      button {
-        margin-left: auto;
-        padding: 5px;
+      #submit-btn {
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+          // background-color: $secondary-item-color;
+          transform: scale(1.05);
+        }
       }
     }
   }
