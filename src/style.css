@@ -16,14 +16,12 @@ body {
   color: #333;
   padding: 5px;
 }
-
 body #title {
   font-size: 3rem;
   height: 30%;
   margin: 50px;
   color: #3498db;
 }
-
 body > #leaderboard-content {
   display: flex;
   height: 70%;
@@ -31,13 +29,11 @@ body > #leaderboard-content {
   justify-content: center;
   gap: 50px;
 }
-
 body > #leaderboard-content > * {
   width: 50%;
   max-width: 500px;
   padding: 30px;
 }
-
 body > #leaderboard-content #all-scores-container {
   background-color: #e4e4e4;
   border-radius: 6px;
@@ -47,13 +43,11 @@ body > #leaderboard-content #all-scores-container {
   gap: 15px;
   border: 2px solid #3498db;
 }
-
 body > #leaderboard-content #all-scores-container #all-scores-list {
   border: 1px solid #3498db;
   border-radius: 6px;
   background-color: #f5f5f5;
 }
-
 body > #leaderboard-content #all-scores-container #all-scores-list .score-item {
   display: flex;
   align-items: center;
@@ -61,19 +55,15 @@ body > #leaderboard-content #all-scores-container #all-scores-list .score-item {
   border-radius: 6px;
   transition: background-color 0.3s;
 }
-
 body > #leaderboard-content #all-scores-container #all-scores-list .score-item:nth-child(even) {
   background-color: #e4e4e4;
 }
-
 body > #leaderboard-content #all-scores-container #all-scores-list .score-item:hover {
   background-color: #5faee3;
 }
-
 body > #leaderboard-content #all-scores-header {
   display: flex;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn {
   padding: 8px;
   width: 36px;
@@ -87,12 +77,10 @@ body > #leaderboard-content #all-scores-header #refresh-btn {
   position: relative;
   transition: background-color 0.3s, transform 0.5s, width 0.5s;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn > span {
   opacity: 0;
   transition: opacity 0.5s;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn #refresh-icon {
   width: 20px;
   height: 20px;
@@ -102,35 +90,29 @@ body > #leaderboard-content #all-scores-header #refresh-btn #refresh-icon {
   transform: translate(-50%, -50%);
   transition: opacity 0.5s;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn:hover {
   background-color: #5faee3;
   transform: scale(1.05);
   width: 66px;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn:hover #refresh-icon {
   opacity: 0;
 }
-
 body > #leaderboard-content #all-scores-header #refresh-btn:hover > span {
   opacity: 1;
 }
-
 body > #leaderboard-content h3 {
   font-size: 2rem;
   font-family: "Helvetica Neue", sans-serif;
   color: #3498db;
   margin-top: 0;
 }
-
 body > #leaderboard-content #score-submit-form {
   display: flex;
   flex-direction: column;
   padding: 15px 0;
   gap: 15px;
 }
-
 body > #leaderboard-content #score-submit-form input {
   height: 40px;
   padding: 8px;
@@ -139,12 +121,10 @@ body > #leaderboard-content #score-submit-form input {
   font-size: 16px;
   transition: border-color 0.3s;
 }
-
 body > #leaderboard-content #score-submit-form input:focus {
   outline: none;
   border-color: #3498db;
 }
-
 body > #leaderboard-content #score-submit-form #submit-btn {
   background-color: #3498db;
   color: white;
@@ -154,8 +134,6 @@ body > #leaderboard-content #score-submit-form #submit-btn {
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
-
 body > #leaderboard-content #score-submit-form #submit-btn:hover {
   transform: scale(1.05);
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
