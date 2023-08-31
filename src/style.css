@@ -84,7 +84,6 @@ body > #leaderboard-content #all-scores-header #refresh-btn {
   margin-left: auto;
   border-radius: 4px;
   cursor: pointer;
-  cursor: pointer;
   position: relative;
   transition: background-color 0.3s, transform 0.5s, width 0.5s;
 }
