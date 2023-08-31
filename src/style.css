@@ -66,16 +66,41 @@ body > #leaderboard-content #all-scores-header {
 }
 body > #leaderboard-content #all-scores-header #refresh-btn {
   padding: 8px;
+  width: 36px;
+  height: 40px;
   background-color: #3498db;
   color: white;
   border: none;
   margin-left: auto;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, transform 0.5s, width 0.5s;
+}
+body > #leaderboard-content #all-scores-header #refresh-btn > span {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+body > #leaderboard-content #all-scores-header #refresh-btn #refresh-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
 }
 body > #leaderboard-content #all-scores-header #refresh-btn:hover {
-  background-color: #e4e4e4;
+  background-color: #5faee3;
+  transform: scale(1.05);
+  width: 66px;
+}
+body > #leaderboard-content #all-scores-header #refresh-btn:hover #refresh-icon {
+  opacity: 0;
+}
+body > #leaderboard-content #all-scores-header #refresh-btn:hover > span {
+  opacity: 1;
 }
 body > #leaderboard-content h3 {
   font-size: 2rem;
@@ -111,6 +136,5 @@ body > #leaderboard-content #score-submit-form #submit-btn {
   transition: background-color 0.3s, transform 0.3s;
 }
 body > #leaderboard-content #score-submit-form #submit-btn:hover {
-  background-color: #e4e4e4;
   transform: scale(1.05);
 }/*# sourceMappingURL=style.css.map */

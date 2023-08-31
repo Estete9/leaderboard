@@ -53,7 +53,7 @@ body {
 
       #all-scores-list {
         border: 1px solid $primary-color;
-          border-radius: 6px;
+        border-radius: 6px;
         background-color: $background-color;
 
         .score-item {
@@ -62,7 +62,7 @@ body {
           padding: 10px;
           border-radius: 6px;
           transition: background-color 0.3s;
-          
+
           &:nth-child(even) {
             background-color: $secondary-item-color;
           }
@@ -79,17 +79,65 @@ body {
 
       #refresh-btn {
         padding: 8px;
+        width: 36px;
+        height: 40px;
         background-color: $primary-color;
         color: white;
         border: none;
         margin-left: auto;
         border-radius: 4px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s, transform 0.5s, width 0.5s;
+
+        > span {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+
+        #refresh-icon {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: opacity 0.5s;
+        }
 
         &:hover {
-          background-color: $secondary-item-color;
+          background-color: lighten($primary-color, 10%);
+          transform: scale(1.05);
+          width: 66px;
+
+          #refresh-icon {
+            opacity: 0;
+          }
+
+          > span {
+            opacity: 1;
+          }
         }
+        // > span,
+        // #refresh-icon {
+        //   #refresh-icon {
+        //     position: absolute;
+        //     top: 50%;
+        //     opacity: 0;
+        //     left: 50%;
+        //   }
+        //   transform: translate(-50%, -50%);
+        //   transition: all 0.5s;
+        // }
+
+        // #refresh-icon {
+        //   > span {
+        //     width: 20px;
+        //     opacity: 1;
+        //     height: 20px;
+        //   }
+        // }
       }
     }
 
@@ -130,7 +178,7 @@ body {
         transition: background-color 0.3s, transform 0.3s;
 
         &:hover {
-          background-color: $secondary-item-color;
+          // background-color: $secondary-item-color;
           transform: scale(1.05);
         }
       }
