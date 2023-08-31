@@ -3,7 +3,7 @@ const baseURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api'
 class LeaderboardAPI {
   constructor() {
     // example leaderboard ID
-    this.leaderboardGameID = 'Zl4d7IVkemOTTVg2fUdz';
+    this.leaderboardGameID = '8aE0wakebZEvh6TGqKup';
   }
 
   makeLeaderboard = async () => {
@@ -47,4 +47,3 @@ class LeaderboardAPI {
 }
 
 export default LeaderboardAPI;
-
