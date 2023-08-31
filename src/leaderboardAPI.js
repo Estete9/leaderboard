@@ -69,4 +69,3 @@ class LeaderboardAPI {
 }
 
 export default LeaderboardAPI;
-
