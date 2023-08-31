@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard - share your score</title>
-  <script defer src="index.js"></script></head>
+  <script defer src="/index.js"></script></head>
   <header></header>
   <body>
-    <section id="title">
-      <h1>Leaderboard</h1>
+    <section>
+      <h1 id="title">Leaderboard</h1>
     </section>
     <article id="leaderboard-content">
       <section id="all-scores-section">
         <div id="all-scores-container">
           <div id="all-scores-header">
             <h3>Recent scores</h3>
-            <button id="refresh-btn">Refresh</button>
+            <button id="refresh-btn">
+              <img id="refresh-icon" alt="Refresh Icon" />
+              Refresh
+            </button>
           </div>
           <ul id="all-scores-list">
             <!-- this is dynamically populated -->
