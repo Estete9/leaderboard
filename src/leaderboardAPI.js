@@ -22,9 +22,6 @@ class LeaderboardAPI {
       if (!response.ok) {
         throw new Error('Failed to create a post.');
       }
-
-      const json = await response.json();
-      console.log('this is the response', json);
     } catch (error) {
       console.error('Error creating a post:', error.message);
     }
@@ -32,17 +29,19 @@ class LeaderboardAPI {
 
   getLeaderboard = async () => {
     console.log('retrieving leaderboard...');
+    let scoreList;
     try {
       const response = await fetch(`${baseURL}/games/${this.leaderboardGameID}/scores/`);
 
       if (!response.ok) {
         throw new Error('Failed to create a post.');
       }
-      const json = await response.json();
-      console.log('this is the response', json);
+      scoreList = await response.json();
+      console.log('this is the response', scoreList);
     } catch (error) {
       console.error('Error creating a post:', error.message);
     }
+    return scoreList;
   };
 }
 

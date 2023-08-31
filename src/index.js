@@ -4,7 +4,7 @@ import Leaderboard from './Leaderboard.js';
 
 const leaderboardApi = new LeaderboardAPI();
 const refreshBtn = document.getElementById('refresh-btn');
-const leaderboard = new Leaderboard(leaderboardApi.getLeaderboard());
+const leaderboard = new Leaderboard(leaderboardApi.getLeaderboard() || []);
 
 leaderboard.updateLeaderboard();
 refreshBtn.onclick = leaderboardApi.getLeaderboard();
