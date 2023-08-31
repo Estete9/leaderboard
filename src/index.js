@@ -16,4 +16,3 @@ postScoreBtn.addEventListener('click', async () => {
   leaderboardApi.postScore(user.value, parseInt(score.value, 10));
   resetInputs([user, score]);
 });
-
